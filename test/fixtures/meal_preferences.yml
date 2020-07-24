@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gluten_free: false
+  vegetarian: false
+  vegan: false
+  dairy_free: false
+  low_sodium: false
+  kosher: false
+  halal: false
+  user_id: 1
+
+two:
+  gluten_free: false
+  vegetarian: false
+  vegan: false
+  dairy_free: false
+  low_sodium: false
+  kosher: false
+  halal: false
+  user_id: 1

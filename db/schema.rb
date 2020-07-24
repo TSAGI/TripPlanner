@@ -10,9 +10,81 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_07_24_021917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attractions", force: :cascade do |t|
+    t.string "name"
+    t.date "date"
+    t.integer "destinations_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "destinations", force: :cascade do |t|
+    t.string "leaving_from"
+    t.string "arriving_to"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "trip_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "eateries", force: :cascade do |t|
+    t.string "name"
+    t.integer "destinations_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "lodgings", force: :cascade do |t|
+    t.string "name"
+    t.integer "destinations_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "meal_preferences", force: :cascade do |t|
+    t.boolean "gluten_free"
+    t.boolean "vegetarian"
+    t.boolean "vegan"
+    t.boolean "dairy_free"
+    t.boolean "low_sodium"
+    t.boolean "kosher"
+    t.boolean "halal"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "review"
+    t.float "rating"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "username"
+    t.string "password_digest"
+    t.string "country"
+    t.string "province"
+    t.string "city"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
