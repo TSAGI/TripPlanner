@@ -1,35 +1,24 @@
-# TripPlanner
-VIEWS
+# README
 
-Landing Page with menu:
-  How it Works (about), Log-in, Register, Plan Your Trip
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-How it Works Page:
-  Explain the procedure, encourage signing up to save your trip
+Things you may want to cover:
 
-Log in Page:
-  Log in page
+* Ruby version
 
-Register Page:
-  Same as log in page
+* System dependencies
 
-Plan Your Trip Page:
-  This is the page that links to different API’s and allows the user to plan their trip. If signed in, it gives the option to save the trip.
+* Configuration
 
+* Database creation
 
+* Database initialization
 
-MODELS
+* How to run the test suite
 
-User Model:
-  First Name(string), Last Name(string), Email(string),
+* Services (job queues, cache servers, search engines, etc.)
 
-Admin Model:
-  ???
+* Deployment instructions
 
-Trip details:
-  Destination(string), Description(text), ???
-
-
-CONTROLLERS
-
-  Users, Sessions(devise gem), Welcome, About, Plan, ???
+* ...
