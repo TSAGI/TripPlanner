@@ -3,7 +3,7 @@ class CreateAttractions < ActiveRecord::Migration[6.0]
     create_table :attractions do |t|
       t.string :name
       t.date :date
-      t.integer :destinations_id
+      t.integer :destination_id
 
       t.timestamps
     end
