@@ -1,3 +1,5 @@
 class Destination < ApplicationRecord
-    has_many :eateries, :lodgings, :attractions
+    has_many :eateries
+    has_many :lodgings
+    has_many :attractions
 end
