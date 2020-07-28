@@ -1,2 +1,21 @@
-<h1>Welcome</h1>
-<p>sign up to begin</p>
+<%= image_tag "toronto_skyline.jpg" %>
+
+<div>
+<%# form_for @destination, url: destination_path do |f| %>
+    <div>
+    <p><%# f.text_field :arriving_to %>Which destination would you like to discover next?</p>
+    </div>
+    <div>
+    <p><%# f.submit "Let's go!"%>
+    </div>
+<%# end %>
+
+</div>
+
+<div class="sug_place">
+    <h3>Suggested Places</h3>
+</div>
+
+<div class="info">
+    <h3>More information and features</h3>
+</div>
