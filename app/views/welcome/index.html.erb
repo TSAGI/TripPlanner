@@ -1,19 +1,36 @@
 <%= image_tag "toronto_skyline.jpg" %>
 
-<div>
-<% form_for @destination, url: root_url do |f| %>
-    <div>
-    <p><% f.text_field :arriving_to %>Which destination would you like to discover next?</p>
-    </div>
-    <div>
-    <p><% f.submit "Let's go!"%>
-    </div>
-<% end %>
+<% if user_signed_in? %>
 
-</div>
+
+
+    <div>
+        <%= form_for @destination, url: root_url do |f| %>
+        <%
+=begin%>
+ # The url is "root_url" because at this stage we didn't establish the Desination routes. 
+<%
+=end%>
+            <div>
+            <p><%= f.text_field :arriving_to, placeholder: "Which destination would you like to explore next?" %></p>
+            </div>
+            <div>
+            <p><%= f.submit "Let's go!"%>
+            </div>
+        <% end %>
+    </div>
+
+<% else !user_signed_in? %>
+
+<% end %>
 
 <div class="sug_place">
     <h3>Suggested Places</h3>
+    <% @cities.each do |city| %>
+        <div>
+            <p><%= p city %></p>
+        </div>
+    <% end %>
 </div>
 
 <div class="info">
