@@ -1,19 +1,19 @@
-<div class="form-group">
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= stylesheet_link_tag 'form'%>
+<%= form_for(:users, :html => {class: "form-group form"}, url: user_session_path) do |f| %>
+<div class="form_title"><%=@title%></div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :login, "Username/Email:", class: "form_label"%><br />
+    <%= f.text_field :login, autofocus: true, autocomplete: "email", class: "form_input" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.label :password, "Password:", class: "form_label"%><br />
+    <%= f.password_field :password, autocomplete: "current-password", class: "form_input" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "btn btn-primary button" %>
   </div>
 <% end %>
-</div>
+
