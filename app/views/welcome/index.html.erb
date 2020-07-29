@@ -1,14 +1,14 @@
 <%= image_tag "toronto_skyline.jpg" %>
 
 <div>
-<%# form_for @destination, url: destination_path do |f| %>
+<% form_for @destination, url: root_url do |f| %>
     <div>
-    <p><%# f.text_field :arriving_to %>Which destination would you like to discover next?</p>
+    <p><% f.text_field :arriving_to %>Which destination would you like to discover next?</p>
     </div>
     <div>
-    <p><%# f.submit "Let's go!"%>
+    <p><% f.submit "Let's go!"%>
     </div>
-<%# end %>
+<% end %>
 
 </div>
 
