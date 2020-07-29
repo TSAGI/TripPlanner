@@ -4,8 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 #Install bootstrap. Bootstrap requires jquery gem
-gem 'bootstrap', '~> 4.0.0'
-gem 'jquery-rails'
+# gem 'bootstrap', '~> 4.0.0'
+# gem 'jquery-rails'
 #Use "devise" gem for authorization 
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
