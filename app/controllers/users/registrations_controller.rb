@@ -7,6 +7,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def new
     @user = User.new
+    @title = "Sign up to TripPlanner"
   end
 
   def create
@@ -17,6 +18,28 @@ class Users::RegistrationsController < Devise::RegistrationsController
         render :new
       end
   end
+
+def edit
+    @title = "Edit your account"
+    @user = User.find(current_user.id)
+end
+
+def update
+    @user = User.find(current_user.id)
+
+    if @user.update_attributes(sign_up_params)
+        redirect_to root_url
+    else
+        render :edit
+    end
+end
+
+def destroy
+    @user = User.find(current_user.id)
+    @user.destroy
+    redirect_to root_url
+end
+
 
   # GET /resource/sign_up
   # def new

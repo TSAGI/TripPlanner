@@ -12,11 +12,20 @@ class Users::SessionsController < Devise::SessionsController
   # def create
   #   super
   # end
-  def create
-    user = User.find_for_authentication(email: params[:user][:email])
+  def new
+    @title = "Log In"
+  end
 
-    if user && user.valid_password?(params[:user][:password])
-      sign_in(user)
+  def create
+    @title = "Log In"
+    user_email = User.find_for_authentication(email: params[:users][:login])
+    user_username = User.find_for_authentication(username: params[:users][:login])
+
+    if user_email && user_email.valid_password?(params[:users][:password])
+      sign_in(user_email)
+      redirect_to root_url
+    elsif user_username && user_username.valid_password?(params[:users][:password])
+      sign_in(user_username)
       redirect_to root_url
     else
       render :new
@@ -35,7 +44,7 @@ class Users::SessionsController < Devise::SessionsController
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_in_params
-  #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
-  # end
+  def configure_sign_in_params
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:username])
+  end
 end
