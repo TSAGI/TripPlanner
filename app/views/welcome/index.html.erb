@@ -1,2 +1,52 @@
-<h1>Welcome</h1>
-<p>sign up to begin</p>
+<%= image_tag "toronto_skyline.jpg" %>
+
+<% if user_signed_in? %>
+    <div>
+        <%= form_for @destination, url: root_url do |f| %>
+        <%
+=begin%>
+ # The url is "root_url" because at this stage we didn't establish the Desination routes. 
+<%
+=end%>
+            <div>
+            <p><%= f.text_field :arriving_to, placeholder: "Which destination would you like to explore next?" %></p>
+            </div>
+            <div>
+            <p><%= f.submit "Let's go!"%>
+            </div>
+        <% end %>
+    </div>
+
+<% else !user_signed_in? %>
+
+<% end %>
+
+<div class="sug_place">
+    <h3>Suggested Places</h3>
+    <% 6.times do %>
+    <% input = @cities.sample %>
+        <div class="city_img">
+            <%= image_tag input + ".jpg" %>
+        <div class="city_text">
+           <p><%= input %></p>
+        </div>
+    <% end %>
+</div>
+
+<div class="info">
+    <h2>More information and features</h2>
+    <div class="fact1">
+        <h3>Fact #1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div class="fact2">
+        <h3>Fact #2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    
+    <div class="fact3">
+        <h3>Fact #3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+</div>
