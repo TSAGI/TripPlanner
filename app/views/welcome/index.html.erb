@@ -1,9 +1,6 @@
 <%= image_tag "toronto_skyline.jpg" %>
 
 <% if user_signed_in? %>
-
-
-
     <div>
         <%= form_for @destination, url: root_url do |f| %>
         <%
@@ -26,13 +23,30 @@
 
 <div class="sug_place">
     <h3>Suggested Places</h3>
-    <% @cities.each do |city| %>
-        <div>
-            <p><%= p city %></p>
+    <% 6.times do %>
+    <% input = @cities.sample %>
+        <div class="city_img">
+            <%= image_tag input + ".jpg" %>
+        <div class="city_text">
+           <p><%= input %></p>
         </div>
     <% end %>
 </div>
 
 <div class="info">
-    <h3>More information and features</h3>
+    <h2>More information and features</h2>
+    <div class="fact1">
+        <h3>Fact #1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div class="fact2">
+        <h3>Fact #2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    
+    <div class="fact3">
+        <h3>Fact #3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
 </div>
