@@ -1,0 +1,91 @@
+.content {
+    width: 70%;
+    margin: 0 auto;
+}
+
+form {
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 2%;
+}
+
+.acnt {
+    margin-top: 8%;
+    margin-bottom: 8%;
+    text-align: center;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.btn-r {
+    float: right;
+    margin-left: 5%;
+    width: 20%;
+}
+
+.btn-l {
+    float: left;
+    margin-right: 5%;
+    width: 20%;
+}
+
+.card-group {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 8%;
+}
+
+.sug-place {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.fact h3 {
+    font-weight: lighter;
+    font-size: 500%;
+}
+
+.fact p {
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+.card-img-overlay .card-title {
+    font-weight: lighter;
+    font-size: 500%;
+}
+
+#all-trip {
+    border: none;
+    margin-bottom: 8%;
+}
+
+.card-img-overlay .card-text {
+    color: rgb(0, 43, 43);
+    font-weight: 700;
+}
+
+.row #btn {
+    width: 300px;
+    margin: auto;
+}
