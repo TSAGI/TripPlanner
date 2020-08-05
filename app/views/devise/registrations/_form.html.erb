@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag 'form'%>
-
-<%= form_for :users, :html => {class: "form-group form"}, url: user_registration_path do |f| %>
+<%= javascript_pack_tag 'form' %>
+<%= form_for :user, :html => {class: "form-group form"}, url: user_registration_path do |f| %>
 <div class="form_title"><%=@title%></div>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -36,19 +36,20 @@
 
   <div class="field">
     <%= f.label :country, "In which country do you live?", class: "form_label" %>
-    <%= f.select :country, "", class: "form_input", onclick: "console.log('hello');"%>
+    <%= f.select :country, options_for_select(@countries, selected=@country), {include_blank: "Choose your country"},class: "form_input"%>
   </div>
 
   <div class="field">
     <%= f.label :province, "In which province/state do you live?", class: "form_label" %>
-    <%= f.select :province, "", class: "form_input" %>
+    <%= f.select :province, options_for_select(@territories, selected=@territory), {include_blank: "Choose your province/state:"},class: "form_input" %>
   </div>
 
   <div class="field">
     <%= f.label :city, "In which city do you live?", class: "form_label" %>
-    <%= f.select :city, "", class: "form_input" %>
+    <%= f.select :city, options_for_select(@cities), {include_blank: "Choose your city:"},class: "form_input" %>
   </div>
   <div class="actions">
     <%= f.submit submit_text, class: "btn btn-primary button" %>
   </div>
 <% end %>
+
