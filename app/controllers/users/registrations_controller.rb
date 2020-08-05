@@ -8,6 +8,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     @user = User.new
     @title = "Sign up to TripPlanner"
+    #list of countries
+    
+    # @countries = CS.get
+    @countries = CS.get.map{|k,v| [v,k]}
+    #list of territories -- needs country to be selected
+    # @country = params[:country] 
+    # @country ? @territories = CS.get(@country).values : @territories = []
+    @territories = []
+    @cities = []
+    # @country ? @territories = CS.get(@country).map{|k,v| [v,k]} : @territories = []
+    #list of cities -- needs territory to be selected
+    # @territory = params[:territory]
+    # @territory ? @cities = CS.get(@country, @territory) : @cities = []
   end
 
   def create
@@ -99,7 +112,7 @@ end
   private
 
   def sign_up_params 
-    params.require(:users).permit(:first_name, :last_name, 
+    params.require(:user).permit(:first_name, :last_name, 
       :username, :city, :province, :country, :email, :password, :password_confirmation)
   end
 end
