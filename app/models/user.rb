@@ -13,4 +13,7 @@ class User < ApplicationRecord
     has_many :reviews
     has_one :meal_preference
 
+    #include Gravtastic
+    #gravtastic :email
+
 end
